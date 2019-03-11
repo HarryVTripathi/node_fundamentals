@@ -1,6 +1,15 @@
 const http = require('http');
 
 const requestListener = (req, res) => {
+    
+    //Display all properties but not nested properties
+    console.log(req, { depth : 0 });
+
+    /*
+    The request object is of type IncomingMessage.
+    The response object is of type ServerResponse.
+    */
+    
     res.end('Hello World');
     /*
     The above method is shorthand for writing the 
@@ -29,3 +38,13 @@ const server = http.createServer(requestListener);
 server.listen(3000, () => {
     console.log("Server is Running");
 });
+
+/*
+    To run the server and activate it; make active to 
+    listening requests.
+
+    listen function itself is an asychronous one. When we run
+    the file, the node process will not exit, because the event
+    loop is also busy listening to incoming connections on port
+    3000 and it will do that forever unless ^C.
+*/
