@@ -27,7 +27,6 @@ const E1 = new EventEmitter();
  */
 
  E1.emit('TEST_EVENT');
-//Dindu nuffin because there was no listener attached at this point
 
  E1.on('TEST-EVENT', () => {
     console.log('Event Fired');
